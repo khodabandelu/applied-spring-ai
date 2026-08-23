@@ -1,0 +1,24 @@
+plugins {
+    id 'org.springframework.boot' version '4.1.0' apply false
+}
+
+configure(subprojects.findAll { it.buildFile.exists() }) {
+    group = 'dev.mehdi.springai'
+    version = '0.1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(25)
+        }
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    tasks.withType(Test).configureEach {
+        useJUnitPlatform()
+    }
+}

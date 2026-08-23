@@ -1,0 +1,15 @@
+# Use this workspace to collaborate
+workspace:
+  id: dac59a67-c0cd-47e1-b6ce-9f10b6b89ac7
+
+localResources:
+  collections:
+    - ../api-client/postman/applied-spring-ai.postman_collection.json
+  environments:
+    - ../api-client/postman/local.postman_environment.json
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ../postman/collections/Applied Spring AI: 216d72d3-73ec-4018-bb8e-486f44e86195

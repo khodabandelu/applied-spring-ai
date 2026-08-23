@@ -1,0 +1,21 @@
+$kind: http-request
+description: Returns the aggregate application health status. Component details are intentionally hidden.
+url: "{{baseUrl}}/actuator/health"
+method: GET
+headers:
+  Accept: application/json
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status code is 200", function () {
+          pm.response.to.have.status(200);
+      });
+
+      pm.test("Application status is UP", function () {
+          const body = pm.response.json();
+          pm.expect(body).to.have.property("status", "UP");
+          pm.expect(body).not.to.have.property("components");
+      });
+    language: text/javascript
+examples: ./.resources/Check application health.resources/examples
+order: 1000

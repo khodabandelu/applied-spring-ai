@@ -1,0 +1,28 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/prompts"
+  method: POST
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "prompt": " "
+      }
+response:
+  statusCode: 400
+  statusText: Bad Request
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "timestamp": "2026-08-23T00:00:00.000Z",
+        "status": 400,
+        "error": "Bad Request",
+        "path": "/api/prompts"
+      }
+order: 1000

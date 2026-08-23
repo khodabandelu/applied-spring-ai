@@ -1,0 +1,27 @@
+$kind: http-request
+description: Confirms that whitespace-only input is rejected before the application calls the model provider.
+url: "{{baseUrl}}/api/prompts"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "prompt": " "
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status code is 400", function () {
+          pm.response.to.have.status(400);
+      });
+
+      pm.test("Validation response is JSON-compatible", function () {
+          const contentType = pm.response.headers.get("Content-Type") || "";
+          pm.expect(contentType).to.match(/application\/(?:problem\+)?json/i);
+      });
+    language: text/javascript
+examples: ./.resources/Reject a blank prompt.resources/examples
+order: 2000

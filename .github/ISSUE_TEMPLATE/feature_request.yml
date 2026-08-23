@@ -1,0 +1,35 @@
+name: Example or feature proposal
+description: Propose a Spring AI capability, improvement, or guide.
+title: "[Proposal]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: What developer problem or Spring AI capability should this address?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed approach
+      description: Describe the example, API, guide, or repository change you have in mind.
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Learning outcome
+      description: What should a reader understand or be able to build after using it?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Mention related examples, designs, or approaches if applicable.

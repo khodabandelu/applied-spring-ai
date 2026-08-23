@@ -1,0 +1,4 @@
+$kind: collection
+description: Runnable API requests and representative responses for the Applied Spring AI examples. AI-generated text can vary, so tests verify the HTTP contract and response shape rather than an exact sentence.
+variables:
+  baseUrl: http://localhost:8080

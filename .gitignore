@@ -1,0 +1,41 @@
+# Operating systems
+.DS_Store
+Thumbs.db
+
+# Gradle and build output
+**/.gradle/
+**/build/
+out/
+bin/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Visual Studio Code
+.vscode/
+
+# Eclipse
+.classpath
+.project
+.settings/
+.factorypath
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+/config/local/set-env.sh
+/api-client/postman/*.private.postman_environment.json
+
+# Prevent an accidental nested Postman Native Git workspace
+/api-client/postman/.postman/
+/api-client/postman/postman/
+
+# Logs and JVM diagnostics
+*.log
+hs_err_pid*
+replay_pid*
+
+# Temporary files
+tmp/

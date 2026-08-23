@@ -1,0 +1,3 @@
+$kind: collection
+description: Verify that the application is available without exposing sensitive health details.
+order: 2000

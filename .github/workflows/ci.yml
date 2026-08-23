@@ -1,0 +1,33 @@
+name: Build and test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test all examples
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '25'
+          cache: gradle
+          cache-dependency-path: |
+            *.gradle
+            examples/**/*.gradle
+            gradle/wrapper/gradle-wrapper.properties
+
+      - name: Run tests
+        run: ./gradlew --no-daemon test

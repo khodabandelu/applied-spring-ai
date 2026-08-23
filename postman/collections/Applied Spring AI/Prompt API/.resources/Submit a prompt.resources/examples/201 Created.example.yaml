@@ -1,0 +1,25 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/prompts"
+  method: POST
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "prompt": "Explain why idempotency matters in distributed systems in one sentence."
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "response": "Idempotency allows repeated operations to produce the same effect, making retries safe when network failures occur."
+      }
+order: 1000

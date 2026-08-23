@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: applied-spring-ai-prompt-api
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        model: gpt-5.6-luna
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
